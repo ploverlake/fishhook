@@ -208,3 +208,8 @@ int rebind_symbols(struct rebinding rebindings[], size_t rebindings_nel) {
   }
   return retval;
 }
+
+int rebind_symbol(const char *name, void *replacement, void **replaced) {
+  return rebind_symbols((struct rebinding[1]){{name, replacement, replaced}}, 1);
+}
+

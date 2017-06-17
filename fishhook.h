@@ -68,6 +68,12 @@ int rebind_symbols_image(void *header,
                          struct rebinding rebindings[],
                          size_t rebindings_nel);
 
+/*
+ * Rebinds as above, but only rebind one function once.
+ */
+FISHHOOK_VISIBILITY
+int rebind_symbol(const char *name, void *replacement, void **replaced);
+
 #ifdef __cplusplus
 }
 #endif //__cplusplus
