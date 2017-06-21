@@ -213,3 +213,7 @@ int rebind_symbol(const char *name, void *replacement, void **replaced) {
   return rebind_symbols((struct rebinding[1]){{name, replacement, replaced}}, 1);
 }
 
+int rebind_symbol_image(void *header, intptr_t slide, const char *name, void *replacement, void **replaced) {
+  return rebind_symbols_image(header, slide, (struct rebinding[1]){{name, replacement, replaced}}, 1);
+}
+
